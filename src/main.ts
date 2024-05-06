@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['http://localhost:3001', 'https://diplom-client-iie3.onrender.com'],
+    origin: ['http://localhost:3001', 'https://diplom-client-iie3.onrender.com', 'https://main--animated-sprinkles-a49f79.netlify.app/'],
   });
 
   const config = new DocumentBuilder()
