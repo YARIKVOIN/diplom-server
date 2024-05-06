@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['https://diplom-client-iie3.onrender.com', 'https://6638398941207357c9b0928d--animated-sprinkles-a49f79.netlify.app', 'https://6638452a470e7560cec5ac46--animated-sprinkles-a49f79.netlify.app'],
+    origin: ['https://diplom-client-iie3.onrender.com', 'https://6638398941207357c9b0928d--animated-sprinkles-a49f79.netlify.app', 'https://6638452a470e7560cec5ac46--animated-sprinkles-a49f79.netlify.app', 'https://6638452a470e7560cec5ac46--animated-sprinkles-a49f79.netlify.app/dashboard'],
   });
 
   const config = new DocumentBuilder()
