@@ -25,25 +25,25 @@ export class AtributesController {
   @HttpCode(HttpStatus.CREATED)
   @Header('Content-type', 'application/json')
   @Post('Add')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   create(@Body() createProductDto: CreateOrderDto){
     return this.atributesService.create(createProductDto);
   }
   @Patch(':id') 
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   update(@Param('id') id: string, @Body() createProductDto: CreateOrderDto){
     return this.atributesService.update(Number(id), createProductDto);
   }
 
   @Delete(':id')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   remove(@Param('id') id: string): Promise<number> {
     return this.atributesService.remove(Number(id));
   }
 
   @ApiOkResponse({ type: SearchResponse })
   @ApiBody({ type: SearchRequest })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post(':id')
   getbyid(@Body() { id }: { id: number }) {
     return this.atributesService.getbyid(id);

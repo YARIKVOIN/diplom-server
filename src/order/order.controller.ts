@@ -26,7 +26,7 @@ export class OrderController {
   @ApiOkResponse({ type: GetByNameResponse })
   @ApiBody({ type: GetByNameRequest })
   @Post('login')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   getByName(@Body() { login }: { login: string }) {
     return this.orderService.findOneByName(login);
   }
@@ -42,25 +42,25 @@ export class OrderController {
   @HttpCode(HttpStatus.CREATED)
   @Header('Content-type', 'application/json')
   @Post('Add')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   create(@Body() createProductDto: CreateOrderDto){
     return this.orderService.create(createProductDto);
   }
   @Patch(':id') 
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   update(@Param('id') id: string, @Body() createProductDto: CreateOrderDto){
     return this.orderService.update(Number(id), createProductDto);
   }
 
   @Delete(':id')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   remove(@Param('id') id: string): Promise<number> {
     return this.orderService.remove(Number(id));
   }
 
   @ApiOkResponse({ type: SearchResponse })
   @ApiBody({ type: SearchRequest })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post('search')
   search(@Body() { search }: { search: string }) {
     return this.orderService.searchByString(search);
@@ -68,7 +68,7 @@ export class OrderController {
 
   @ApiOkResponse({ type: SearchResponse })
   @ApiBody({ type: SearchRequest })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post(':id')
   getbyid(@Body() { id }: { id: number }) {
     return this.orderService.getbyid(id);

@@ -11,13 +11,13 @@ export class PaymentController {
   constructor(private paymentService: PaymentService) {}
 
   @ApiOkResponse({ type: MakePaymentResponse })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post()
   makePayment(@Body() makePaymentDto: MakePaymentDto) {
     return this.paymentService.makePayment(makePaymentDto);
   }
 
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post('/info')
   checkPayment(@Body() checkPaymentDto: CheckPaymentDto) {
     return this.paymentService.checkPayment(checkPaymentDto);

@@ -26,14 +26,14 @@ export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
   @ApiOkResponse({ type: [GetAllResponse] })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Get(':id')
   getAll(@Param('id') userId: string) {
     return this.shoppingCartService.findAll(userId);
   }
 
   @ApiOkResponse({ type: AddToCardResponse })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Post('/add')
   addToCar(@Body() addToCartDto: AddToCartDto) {
     return this.shoppingCartService.add(addToCartDto);
@@ -41,7 +41,7 @@ export class ShoppingCartController {
 
   @ApiOkResponse({ type: UpdateCountResponse })
   @ApiBody({ type: UpdateCountRequest })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Patch('/count/:id')
   updateCount(
     @Body() { count }: { count: number },
@@ -52,7 +52,7 @@ export class ShoppingCartController {
 
   @ApiOkResponse({ type: TotalPriceResponse })
   @ApiBody({ type: TotalPriceRequest })
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Patch('/total-price/:id')
   updateTotalPrice(
     @Body() { total_price }: { total_price: number },
@@ -61,13 +61,13 @@ export class ShoppingCartController {
     return this.shoppingCartService.updateTotalPrice(total_price, partId);
   }
 
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Delete('/one/:id')
   removeOne(@Param('id') partId: string) {
     return this.shoppingCartService.remove(partId);
   }
 
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   @Delete('/all/:id')
   removeAll(@Param('id') userId: string) {
     return this.shoppingCartService.removeAll(userId);
