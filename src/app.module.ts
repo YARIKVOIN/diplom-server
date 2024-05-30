@@ -9,6 +9,9 @@ import { BoilerPartsModule } from './boiler-parts/boiler-parts.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { PaymentModule } from './payment/payment.module';
 import { OrderModule } from './order/order.module';
+import { CategoryModule } from './category/category.module';
+import { ProizvoditelModule } from './proizvoditel/proizvoditel.module';
+import { AtributesModule } from './atributes/atributes.module';
 
 @Module({
   imports: [
@@ -25,6 +28,9 @@ import { OrderModule } from './order/order.module';
     ShoppingCartModule,
     PaymentModule,
     OrderModule,
+    CategoryModule,
+    ProizvoditelModule,
+    AtributesModule
   ],
 })
 export class AppModule {}

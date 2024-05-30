@@ -22,9 +22,6 @@ class ShoppingCartItem {
   @ApiProperty({ example: '128 GB' })
   memory: string;
 
-  @ApiProperty({ example: 'intel' })
-  proccesor: string;
-
   @ApiProperty({ example: 1 })
   userId: number;
 

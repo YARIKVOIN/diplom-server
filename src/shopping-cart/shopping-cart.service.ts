@@ -24,12 +24,9 @@ export class ShoppingCartService {
       where: { username: addToCartDto.username },
     });
     const part = await this.boilerPartsService.findOne(addToCartDto.partId);
-
     cart.userId = user.id;
     cart.partId = part.id;
     cart.memory = part.memory;
-    cart.proccesor = part.proccesor;
-    cart.camera = part.camera;
     cart.model = part.model;
     cart.price = part.price;
     cart.in_stock = part.in_stock;

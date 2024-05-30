@@ -87,4 +87,8 @@ export class BoilerPartsService {
   async remove(id: number): Promise<number> {
     return this.boilerPartsModel.destroy({ where: { id } });
   }
+  
+  async findAll(): Promise<BoilerParts[]> {
+    return this.boilerPartsModel.findAll();
+  }
 }

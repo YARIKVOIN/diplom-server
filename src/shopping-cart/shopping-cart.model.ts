@@ -15,12 +15,6 @@ export class ShoppingCart extends Model {
   price: number;
 
   @Column
-  proccesor: string;
-
-  @Column
-  
-  camera: string;
-  @Column
   model: string;
 
   @Column

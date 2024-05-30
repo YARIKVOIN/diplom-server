@@ -10,10 +10,7 @@ export class BoilerParts extends Model {
   price: number;
 
   @Column
-  proccesor: string;
-
-  @Column
-  display: string;
+  atributes: string;
 
   @Column
   name: string;
@@ -39,9 +36,6 @@ export class BoilerParts extends Model {
   @Column
   vendor_code: number;
   
-  @Column
-  camera: string;
-
   @Column({ defaultValue: 0 })
   in_stock: number;
 }

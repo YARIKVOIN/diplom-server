@@ -81,4 +81,10 @@ export class BoilerPartsController {
   remove(@Param('id') id: string): Promise<number> {
     return this.boilerPartsService.remove(Number(id));
   }
+
+  @ApiOkResponse({ type: PaginateAndFilterResponse })
+  @Get('All')
+  findAll(@Query() query) {
+    return this.boilerPartsService.findAll();
+  }
 }
