@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['http://localhost:3001', 'https://diplom-client-iie3.onrender.com', 'https://20a7-193-39-160-201.ngrok-free.app', 'https://20a7-193-39-160-201.ngrok-free.app/dashboard'],
+    origin: ['http://localhost:3001', 'https://diplom-client-iie3.onrender.com', 'https://diplom-client-iie3.onrender.com/dashboard', 'https://20a7-193-39-160-201.ngrok-free.app/dashboard'],
   });
 
   const config = new DocumentBuilder()

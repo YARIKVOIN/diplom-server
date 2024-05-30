@@ -25,25 +25,25 @@ export class ProizvoditelController {
   @HttpCode(HttpStatus.CREATED)
   @Header('Content-type', 'application/json')
   @Post('Add')
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   create(@Body() createProductDto: CreateOrderDto){
     return this.proizvoditelService.create(createProductDto);
   }
   @Patch(':id') 
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   update(@Param('id') id: string, @Body() createProductDto: CreateOrderDto){
     return this.proizvoditelService.update(Number(id), createProductDto);
   }
 
   @Delete(':id')
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   remove(@Param('id') id: string): Promise<number> {
     return this.proizvoditelService.remove(Number(id));
   }
 
   @ApiOkResponse({ type: SearchResponse })
   @ApiBody({ type: SearchRequest })
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   @Post(':id')
   getbyid(@Body() { id }: { id: number }) {
     return this.proizvoditelService.getbyid(id);

@@ -25,25 +25,25 @@ export class CategoryController {
   @HttpCode(HttpStatus.CREATED)
   @Header('Content-type', 'application/json')
   @Post('Add')
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   create(@Body() createProductDto: CreateOrderDto){
     return this.categoryService.create(createProductDto);
   }
   @Patch(':id') 
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   update(@Param('id') id: string, @Body() createProductDto: CreateOrderDto){
     return this.categoryService.update(Number(id), createProductDto);
   }
 
   @Delete(':id')
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   remove(@Param('id') id: string): Promise<number> {
     return this.categoryService.remove(Number(id));
   }
 
   @ApiOkResponse({ type: SearchResponse })
   @ApiBody({ type: SearchRequest })
-  @UseGuards(AuthenticatedGuard)
+  // @UseGuards(AuthenticatedGuard)
   @Post(':id')
   getbyid(@Body() { id }: { id: number }) {
     return this.categoryService.getbyid(id);
