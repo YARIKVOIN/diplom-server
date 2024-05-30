@@ -26,7 +26,7 @@ export class PaymentService {
           capture: true,
           confirmation: {
             type: 'redirect',
-            return_url: 'http://localhost:3001/order',
+            return_url: 'https://diplom-client-production-51fb.up.railway.app/order',
           },
           description: makePaymentDto.description,
         },
